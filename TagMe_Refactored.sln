@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Post.API", "Post.API\Post.API.csproj", "{3569F01A-47C1-4A76-BA5B-2AA2BEA710EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.API", "Post.API\Post.API.csproj", "{3569F01A-47C1-4A76-BA5B-2AA2BEA710EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comment.API", "Comment.API\Comment.API.csproj", "{400C3A6F-46F2-4116-8576-E76103A5A13C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comment.API", "Comment.API\Comment.API.csproj", "{400C3A6F-46F2-4116-8576-E76103A5A13C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{991D9550-5FC2-410E-AE04-00C029164C23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "EventBus.csproj\EventBus.csproj", "{4F83BF3D-445A-4979-A434-41FE1C4B439E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{400C3A6F-46F2-4116-8576-E76103A5A13C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{400C3A6F-46F2-4116-8576-E76103A5A13C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{400C3A6F-46F2-4116-8576-E76103A5A13C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F83BF3D-445A-4979-A434-41FE1C4B439E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F83BF3D-445A-4979-A434-41FE1C4B439E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F83BF3D-445A-4979-A434-41FE1C4B439E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F83BF3D-445A-4979-A434-41FE1C4B439E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F83BF3D-445A-4979-A434-41FE1C4B439E} = {991D9550-5FC2-410E-AE04-00C029164C23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36811D67-DF48-4089-A42C-045C83704520}
