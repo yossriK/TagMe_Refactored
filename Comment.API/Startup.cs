@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Comment.Messaging.Recieve.Options;
+using Comment.Messaging.Recieve.Reciever;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,11 @@ namespace Comment.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddHostedService<MessageReciever>();
+            services.AddHostedService<BlackMessageReciever>();
+
+            services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitMq"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Events\" />
     <Folder Include="Handlers\" />
     <Folder Include="NewFolder\" />
   </ItemGroup>
@@ -12,6 +13,10 @@
   <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="6.2.1" />
     <PackageReference Include="RawRabbit" Version="1.10.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Comment.Messaging.Recieve\Comment.Messaging.Recieve.csproj" />
   </ItemGroup>
 
 
