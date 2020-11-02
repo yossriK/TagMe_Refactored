@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Posting.Messaging.Send.Options;
+using Posting.Messaging.Send.Sender;
 
 namespace Post.API
 {
@@ -25,7 +27,12 @@ namespace Post.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddOptions();
+            services.AddTransient<IPostUpdateSender, PostUpdateSender>();
+            services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitMq"));
+
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

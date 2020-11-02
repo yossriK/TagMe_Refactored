@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Posting.Messaging.Send.Sender;
 
 namespace Post.API.Controllers
 {
@@ -17,9 +18,13 @@ namespace Post.API.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IPostUpdateSender _postUpdateSender;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IPostUpdateSender postUpdateSender)
         {
+            _postUpdateSender = postUpdateSender;
+
             _logger = logger;
         }
 
@@ -27,6 +32,8 @@ namespace Post.API.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
+            _postUpdateSender.SendCustomer("random string trying to send using a queue");
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -34,6 +41,7 @@ namespace Post.API.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+
         }
     }
 }

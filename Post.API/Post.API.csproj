@@ -6,6 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="6.2.1" />
+    <PackageReference Include="RawRabbit" Version="1.10.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Posting.Messaging.Send\Posting.Messaging.Send.csproj" />
   </ItemGroup>
 
 
